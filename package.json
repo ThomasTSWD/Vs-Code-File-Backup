@@ -1,0 +1,44 @@
+{
+  "name": "vscode-file-backup",
+  "displayName": "VS Code File Backup",
+  "description": "A simple extension to backup files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.backupFile",
+    "onCommand:extension.backupFileContext"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.backupFile",
+        "title": "Backup the File"
+      },
+      {
+        "command": "extension.backupFileContext",
+        "title": "Backup the File"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.backupFileContext",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThomasTSWD/vscode-file-backup.git"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.91.0",
+    "vscode-test": "^1.6.0"
+  },
+  "publisher": "ThomasTSWD",
+  "icon": "icon.png"
+}
